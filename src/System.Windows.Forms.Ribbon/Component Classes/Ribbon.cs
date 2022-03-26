@@ -323,9 +323,9 @@ namespace System.Windows.Forms
                         goto done;
                     }
                 }
-                #endregion
+            #endregion
 
-                done:;
+            done:;
 
             }
 
@@ -2436,6 +2436,8 @@ namespace System.Windows.Forms
                     tab.SetSelected(false);
                 }
             Invalidate();
+            // Josh Davidson's fix for items getting stuck selected when the mouse leaves the form fast
+            OnMouseMove(new MouseEventArgs(MouseButtons.None, 0, Cursor.Position.X, Cursor.Position.Y, 0));
         }
 
         /// <summary>

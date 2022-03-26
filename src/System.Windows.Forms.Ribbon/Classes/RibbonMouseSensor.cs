@@ -452,6 +452,8 @@ namespace System.Windows.Forms
         private void Control_MouseLeave(object sender, EventArgs e)
         {
             if (IsSuspended || Disposed) return;
+            // Josh Davidson's fix for items getting stuck selected when the mouse leaves the form fast
+            RealMouseMove(new MouseEventArgs(MouseButtons.None, 0, Cursor.Position.X, Cursor.Position.Y, 0));
         }
 
         /// <summary>
@@ -460,6 +462,15 @@ namespace System.Windows.Forms
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Control_MouseMove(object sender, MouseEventArgs e)
+        {
+            RealMouseMove(e);
+        }
+
+        /// <summary>
+        /// Actual MouseMove call
+        /// </summary>
+        /// <param name="e"></param>
+        private void RealMouseMove(MouseEventArgs e)
         {
             if (IsSuspended || Disposed) return;
             //Console.WriteLine("MouseMove " + Control.Name);
