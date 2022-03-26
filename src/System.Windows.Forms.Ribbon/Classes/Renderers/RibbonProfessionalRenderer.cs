@@ -5082,12 +5082,10 @@ namespace System.Windows.Forms
                         if (b.DropDownPressed && b.SizeMode != RibbonElementSizeMode.DropDown)
                         {
                             DrawButtonPressed(e.Graphics, b, e.Ribbon);
-                            DrawSplitButtonDropDownSelected(e, b);
                         }
                         else if (b.Pressed && b.SizeMode != RibbonElementSizeMode.DropDown)
                         {
                             DrawButtonPressed(e.Graphics, b, e.Ribbon);
-                            DrawSplitButtonSelected(e, b);
                         }
 
                         else if (b.DropDownSelected)
@@ -5116,11 +5114,7 @@ namespace System.Windows.Forms
 
                 if (b.Style != RibbonButtonStyle.Normal && !(b.Style == RibbonButtonStyle.DropDown && b.SizeMode == RibbonElementSizeMode.Large))
                 {
-                    if (b.Style == RibbonButtonStyle.DropDown)
-                    {
-                        DrawButtonDropDownArrow(e.Graphics, b, b.OnGetDropDownBounds(b.SizeMode, b.Bounds));
-                    }
-                    else
+                    if (b.Style != RibbonButtonStyle.DropDown)
                     {
                         DrawButtonDropDownArrow(e.Graphics, b, b.DropDownBounds);
                     }

@@ -42,6 +42,10 @@ namespace System.Windows.Forms
         private Size _minimumSize;
         private Size _maximumSize;
 
+        /// <summary>
+        /// Set true to fix drawing if it's a quick access button
+        /// </summary>
+
         #endregion
 
         #region Events
