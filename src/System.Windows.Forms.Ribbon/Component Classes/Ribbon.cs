@@ -49,7 +49,8 @@ namespace System.Windows.Forms
         internal bool ForceOrbMenu;
         private Size _lastSizeMeasured;
         private Padding _tabsMargin;
-        internal bool _minimized = true;//is the ribbon minimized?
+        internal bool _minimized = true; //is the ribbon minimized?
+        internal bool _minimziedAllowed = true; // is the ribbon allowed to be minimized?
         internal bool _expanded; //is the ribbon currently expanded when in minimize mode
         internal bool _expanding; //is the ribbon expanding. Flag used to prevent calling methods multiple time while the size changes
                                   //private int _minimizedHeight;//height when minimized
@@ -1200,10 +1201,11 @@ namespace System.Windows.Forms
         public RibbonTabCollection Tabs { get; }
 
         /// <summary>
-        /// Gets or sets a value indicating if the Ribbon supports being minimized
+        /// Gets or sets a value indicating if the Ribbon is minimized
         /// </summary>
         [Category("Appearance")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [DefaultValue(false)]
         public bool Minimized
         {
             get => _minimized;
@@ -1225,6 +1227,18 @@ namespace System.Windows.Forms
                     Invalidate();
                 }
             }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating if the Ribbon supports being minimized
+        /// </summary>
+        [Category("Appearance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [DefaultValue(true)]
+        public bool MinimizedAllowed
+        {
+            get => _minimziedAllowed;
+            set => _minimziedAllowed = value;
         }
 
         /// <summary>
@@ -2371,7 +2385,7 @@ namespace System.Windows.Forms
                 OnOrbDoubleClicked(EventArgs.Empty);
             }
 
-            if (Tabs.Count != 1 || Tabs[0].Invisible == false)
+            if ((Tabs.Count != 1 || Tabs[0].Invisible == false) && MinimizedAllowed)
             {
                 foreach (RibbonTab tab in Tabs)
                 {

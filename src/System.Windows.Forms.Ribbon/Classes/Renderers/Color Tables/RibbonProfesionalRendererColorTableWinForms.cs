@@ -26,17 +26,17 @@ namespace System.Windows.Forms
             ThemeAuthorEmail = "";
             ThemeDateCreated = "25 Mar 22";
 
-            OrbDropDownDarkBorder = FromHex("#9BAFCA");
+            OrbDropDownDarkBorder = FromHex("#919191");
             OrbDropDownLightBorder = FromHex("#FFFFFF");
-            OrbDropDownBack = FromHex("#BFD3EB");
-            OrbDropDownNorthA = FromHex("#D7E5F7");
-            OrbDropDownNorthB = FromHex("#D4E1F3");
-            OrbDropDownNorthC = FromHex("#C6D8EE");
-            OrbDropDownNorthD = FromHex("#B7CAE6");
-            OrbDropDownSouthC = FromHex("#B0C9EA");
-            OrbDropDownSouthD = FromHex("#CFE0F5");
-            OrbDropDownContentbg = FromHex("#E9EAEE");
-            OrbDropDownContentbglight = FromHex("#FAFAFA");
+            OrbDropDownBack = FromHex("#E1E1E1");
+            OrbDropDownNorthA = FromHex("#E1E1E1");
+            OrbDropDownNorthB = FromHex("#E1E1E1");
+            OrbDropDownNorthC = FromHex("#E1E1E1");
+            OrbDropDownNorthD = FromHex("#E1E1E1");
+            OrbDropDownSouthC = FromHex("#E1E1E1");
+            OrbDropDownSouthD = FromHex("#E1E1E1");
+            OrbDropDownContentbg = FromHex("#EAECEE");
+            OrbDropDownContentbglight = FromHex("#EAECEE");
             OrbDropDownSeparatorlight = FromHex("#F5F5F5");
             OrbDropDownSeparatordark = FromHex("#C5C5C5");
             Caption1 = FromHex("#E3EBF6");
@@ -72,8 +72,8 @@ namespace System.Windows.Forms
             TabSelectedGlow = FromHex("#EAECEE");
             PanelDarkBorder = FromHex("#919191");
             PanelLightBorder = FromHex("#EAECEE");
-            PanelTextBackground = FromHex("#DCEBF9");
-            PanelTextBackgroundSelected = FromHex("#DCEBF9");
+            PanelTextBackground = FromHex("#E1E1E1");
+            PanelTextBackgroundSelected = FromHex("#C9DEF5");
             PanelText = FromHex("#1E1E1E");
             PanelBackgroundSelected = FromHex("#EAECEE");
             PanelOverflowBackground = FromHex("#EAECEE");
@@ -189,7 +189,5 @@ namespace System.Windows.Forms
 
             #endregion
         }
-
-
     }
 }
