@@ -73,7 +73,7 @@ namespace System.Windows.Forms
             PanelDarkBorder = FromHex("#919191");
             PanelLightBorder = FromHex("#EAECEE");
             PanelTextBackground = FromHex("#E1E1E1");
-            PanelTextBackgroundSelected = FromHex("#C9DEF5");
+            PanelTextBackgroundSelected = FromHex("#D3E6F8");
             PanelText = FromHex("#1E1E1E");
             PanelBackgroundSelected = FromHex("#EAECEE");
             PanelOverflowBackground = FromHex("#EAECEE");
